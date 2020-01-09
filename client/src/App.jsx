@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
-import LoginForm from './pages/LoginForm'
+import LoginPage from './pages/LoginPage'
 import SignupForm from './pages/SignupForm'
 import Home from './pages/Home'
 import { NavBar } from './components'
@@ -80,7 +80,7 @@ class App extends Component {
 					exact
 					path="/login"
 					render={() =>
-						<LoginForm
+						<LoginPage
 							_login={this._login}
 							_googleSignin={this._googleSignin}
 						/>}
