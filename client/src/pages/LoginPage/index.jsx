@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 // import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png'
-import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
+//import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
 import './login.css';
 import LoginForm from "../../components/LoginForm";
 
@@ -69,7 +69,10 @@ class LoginPage extends Component {
 								<div className={"login100-pic js-tilt"} data-tilt>
 									<img src={require("./images/img-01.png")} alt={"IMG.."} />
 								</div>
-								<LoginForm/>
+								<LoginForm username={this.state.username}
+								 password={this.state.password}
+								 handleChange={this.handleChange}
+								 handleSubmit={this.handleSubmit}/>
 							</div>
 						</div>
 					</div>
