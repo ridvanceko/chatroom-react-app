@@ -8,11 +8,11 @@ import { NavBar } from './components'
 
 class App extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			loggedIn: false,
 			user: null
-		}
+		};
 		this._logout = this._logout.bind(this);
 		this._login = this._login.bind(this);
 	};
@@ -34,7 +34,7 @@ class App extends Component {
 	};
 
 	_logout(event) {
-		event.preventDefault()
+		event.preventDefault();
 		axios.post('/auth/logout').then(response => {
 			if (response.status === 200) {
 				this.setState({
@@ -66,25 +66,15 @@ class App extends Component {
 			<div className="">
 
 				{/* Navbar on every page */}
-				<NavBar
-					_logout={this._logout}
-					loggedIn={this.state.loggedIn}
-				/>
+				<NavBar _logout={this._logout} loggedIn={this.state.loggedIn}/>
 				{/*  Individual Things */}
-				<Route
-					exact
-					path="/"
-					render={() =>
-						<Home user={this.state.user} />} />
-				<Route
-					exact
-					path="/login"
-					render={() =>
-						<LoginPage
-							_login={this._login}
-							_googleSignin={this._googleSignin}
-						/>}
-				/>
+				<Route exact path="/" render={
+					() => <Home user={this.state.user} />
+				}/>
+				<Route exact path="/login" render={
+					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin}/>
+
+				}/>
 				<Route
 					exact path="/signup"
 					component={SignupForm}
