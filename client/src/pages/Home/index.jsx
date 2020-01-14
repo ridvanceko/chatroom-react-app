@@ -4,7 +4,7 @@ import "./home.css";
 
 export default class Home extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			user: props.user
 		}
