@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import SignupForm from './pages/SignupForm'
 import Home from './pages/Home'
+import ChatRoom from "./pages/ChatRoom";
 import { NavBar } from './components'
 
 class App extends Component {
@@ -64,8 +65,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="">
-
-				{/* Navbar on every page */}
+				{/*/!* Navbar on every page *!/*/}
 				<NavBar _logout={this._logout} loggedIn={this.state.loggedIn}/>
 				{/*  Individual Things */}
 				<Route exact path="/" render={
@@ -73,12 +73,9 @@ class App extends Component {
 				}/>
 				<Route exact path="/login" render={
 					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin}/>
-
 				}/>
-				<Route
-					exact path="/signup"
-					component={SignupForm}
-				/>
+				<Route exact path="/signup" component={SignupForm}/>
+				<Route exact path="/chatroom" component={ChatRoom} _logout={this._logout} user={this.state.user}/>
 			</div>
 		)
 	}

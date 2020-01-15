@@ -11,17 +11,18 @@ export default class SignupForm extends Component {
 			password: '',
 			confirmPassword: '',
 			redirectTo: null
-		}
-		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChange = this.handleChange.bind(this)
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 	handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value
 		})
 	}
+
 	handleSubmit(event) {
-		event.preventDefault()
+		event.preventDefault();
 		// TODO - validate!
 		axios
 			.post('/auth/signup', {
@@ -29,9 +30,9 @@ export default class SignupForm extends Component {
 				password: this.state.password
 			})
 			.then(response => {
-				console.log(response)
+				console.log(response);
 				if (!response.data.errmsg) {
-					console.log('youre good')
+					console.log('youre good');
 					this.setState({
 						redirectTo: '/login'
 					})
