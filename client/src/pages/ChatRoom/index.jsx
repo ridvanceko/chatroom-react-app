@@ -1,27 +1,75 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import FriendList from "../../components/FriendList";
 import ChatScreen from "../../components/ChatScreen";
 import "./assets/css/style.css";
-
+import Rachel from "../../pages/ChatRoom/assets/images/Rachel.jpg";
+import Shiyu from "../../pages/ChatRoom/assets/images/shiyu.png";
 
 class ChatRoom extends Component {
     constructor(props){
-        super();
-        this.state = {
-            user: props.user,
-            target: "",
-            friends: ["hahaha"],
+        super(props);
+        this.state =  {
+            friendList: [
+                {   name: "Rachel",
+                    photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),
+                    is_active: true,
+                    is_online: true
+                },
+                {   name: "Ridvan",
+                    photo: require("../../pages/ChatRoom/assets/images/Ridvan .png"),
+                    is_active: false,
+                    is_online: true
+                },
+                {   name: "Shiyu",
+                    photo: require("../../pages/ChatRoom/assets/images/shiyu.png"),
+                    is_active: false,
+                    is_online: true
+                },
+                {   name: "Hamrah",
+                    photo: require("../../pages/ChatRoom/assets/images/Hamrah.png"),
+                    is_active: false,
+                    is_online: false
+                },
+                {   name: "Jesus",
+                    photo: require("../../pages/ChatRoom/assets/images/Jesus.png"),
+                    is_active: false,
+                    is_online: false
+                }
+            ],
+            chatScreen: {
+                user_name: "Shiyu",
+                user_photo: require("../../pages/ChatRoom/assets/images/shiyu.png"),
+                target_name: "Rachel",
+                target_photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),
+                target_is_online: true,
+                conversation: [{
+                    meg: "Hey, I just want to say I LOVE YOU, Shiyu !!!",
+                    user_is_sender: false,
+                },{
+                    meg: "Awww, really! I love you too, my sweet heart! Do you have time on this weekend?",
+                    user_is_sender: true,
+                },{
+                    meg: "Hehe, I do have time on this weekend!",
+                    user_is_sender: false,
+                },{
+                    meg: "Great! I will see you then!!",
+                    user_is_sender: true,
+                },],
+            }
         }
     }
 
     render() {
-        console.log(this.state.user);
             return (
                 <div className={"container-fluid m-5"}>
                     <div className={"row justify-content-center h-100"}>
-                        <FriendList Friends={this.state.friends}/>
-                        <ChatScreen />
+                        <FriendList state={this.state.friendList}/>
+                        <ChatScreen user_photo={this.state.chatScreen.user_photo}
+                                    target_photo={this.state.chatScreen.target_photo}
+                                    target_is_online={this.state.chatScreen.target_is_online}
+                                    target_name={this.state.chatScreen.target_name}
+                                    conversation={this.state.chatScreen.conversation}
+                        />
                     </div>
                 </div>
             )

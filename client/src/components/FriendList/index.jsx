@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 
-// Hard code users images
-import Hamrah from "../../pages/ChatRoom/assets/images/Hamrah.png";
-import Jesus from "../../pages/ChatRoom/assets/images/Jesus.png";
-import Shiyu from "../../pages/ChatRoom/assets/images/shiyu.png";
-import Ridvan from "../../pages/ChatRoom/assets/images/Ridvan .png";
+function renderContacter(state){
+   return state.map(contacter => {
+        return(
+            <li className={contacter.is_active ? "active" : "" }>
+                <div className="d-flex bd-highlight">
+                    <div className="img_cont">
+                        <img src={contacter.photo} className="rounded-circle user_img" alt={"user.img"}/>
+                        <span className={contacter.is_online ? "online_icon" : "online_icon offline" }/>
+                    </div>
+                    <div className="user_info">
+                        <span>{contacter.name}</span>
+                        { contacter.is_online ? <p>Online now</p> : <p>{contacter.name} left 30 mins ago</p>}
+                    </div>
+                </div>
+             </li>
+        )
+    })
+}
 
 class FriendList extends Component {
     constructor(props){
-        super();
-        this.state = {
-            target: "",
-            friends: props.Friends,
-        }
+        super(props);
+        this.state = this.props.state;
     }
+
     render() {
-        console.log(this.state.friends);
         return (
             <div className="col-md-4 col-xl-3 chat">
                 <div className="card mb-sm-3 mb-md-0 contacts_card">
@@ -28,69 +38,9 @@ class FriendList extends Component {
                         </div>
                     </div>
                     <div className="card-body contacts_body">
-                        <ui className="contacts">
-                            <li className="active">
-                                <div className="d-flex bd-highlight">
-                                    <div className="img_cont">
-                                        <img src={Hamrah} className="rounded-circle user_img" alt={"user.img"}/>
-                                            <span className="online_icon"/>
-                                    </div>
-                                    <div className="user_info">
-                                        <span>Hamrah</span>
-                                        <p>Hamrah is online</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="d-flex bd-highlight">
-                                    <div className="img_cont">
-                                        <img src={Jesus} className="rounded-circle user_img" alt={"user.img"}/>
-                                            <span className="online_icon offline"/>
-                                    </div>
-                                    <div className="user_info">
-                                        <span>Jesus</span>
-                                        <p>Jesus left 7 mins ago</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="d-flex bd-highlight">
-                                    <div className="img_cont">
-                                        <img src={Ridvan} className="rounded-circle user_img" alt={"user.img"}/>
-                                            <span className="online_icon"/>
-                                    </div>
-                                    <div className="user_info">
-                                        <span>Ridvan</span>
-                                        <p>Ridvan is online</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="d-flex bd-highlight">
-                                    <div className="img_cont">
-                                        <img src={Shiyu} className="rounded-circle user_img" alt={"user.img"}/>
-                                            <span className="online_icon offline"/>
-                                    </div>
-                                    <div className="user_info">
-                                        <span>Shiyu</span>
-                                        <p>Shiyu left 30 mins ago</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div className="d-flex bd-highlight">
-                                    <div className="img_cont">
-                                        <img src={Jesus} className="rounded-circle user_img" alt={"user.img"}/>
-                                            <span className="online_icon offline"/>
-                                    </div>
-                                    <div className="user_info">
-                                        <span>Dario</span>
-                                        <p>Dario left 10 mins ago</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ui>
+                        <ul className="contacts">
+                            {renderContacter(this.state)}
+                        </ul>
                     </div>
                     <div className="card-footer"/>
                 </div>
