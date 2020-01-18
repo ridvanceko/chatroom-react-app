@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 
-function renderContacter(state){
-   return state.map(contacter => {
-        return(
-            <li className={contacter.is_active ? "active" : "" }>
-                <div className="d-flex bd-highlight">
-                    <div className="img_cont">
-                        <img src={contacter.photo} className="rounded-circle user_img" alt={"user.img"}/>
-                        <span className={contacter.is_online ? "online_icon" : "online_icon offline" }/>
-                    </div>
-                    <div className="user_info">
-                        <span>{contacter.name}</span>
-                        { contacter.is_online ? <p>Online now</p> : <p>{contacter.name} left 30 mins ago</p>}
-                    </div>
-                </div>
-             </li>
-        )
-    })
+function renderContacter(state, props){
+   if(state){
+       return state.map(contacter => {
+           return(
+               <li className={contacter.is_active ? "active" : ""} onClick={props.target_change.bind(this, contacter.name)}>
+                   <div className="d-flex bd-highlight">
+                       <div className="img_cont">
+                           <img src={contacter.photo} className="rounded-circle user_img" alt={"user.img"}/>
+                           <span className={contacter.is_online ? "online_icon" : "online_icon offline" }/>
+                       </div>
+                       <div className="user_info">
+                           <span>{contacter.name}</span>
+                           { contacter.is_online ? <p>Online now</p> : <p>{contacter.name} left 30 mins ago</p>}
+                       </div>
+                   </div>
+               </li>
+           )
+       })
+   }else{
+       return(<h2>There is no any conversation...</h2>)
+   }
+
 }
 
 class FriendList extends Component {
@@ -26,6 +31,7 @@ class FriendList extends Component {
     }
 
     render() {
+        console.log();
         return (
             <div className="col-md-4 col-xl-3 chat">
                 <div className="card mb-sm-3 mb-md-0 contacts_card">
@@ -39,7 +45,7 @@ class FriendList extends Component {
                     </div>
                     <div className="card-body contacts_body">
                         <ul className="contacts">
-                            {renderContacter(this.state)}
+                            {renderContacter(this.state, this.props)}
                         </ul>
                     </div>
                     <div className="card-footer"/>
