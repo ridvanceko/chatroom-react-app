@@ -6,6 +6,6 @@ const authController = require("./auth.controller");
 router.use("/api/books", bookController);
 
 // Auth Routes
-router.use("/auth", authController)
+router.use("/auth", authController);
 
 module.exports = router;
