@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 // import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png'
-<<<<<<< HEAD
-//import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
-import './login.css';
-=======
 import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
 
->>>>>>> 6a9189c753918c53f2ede1b81d8b9446ffb7eb1b
 import LoginForm from "../../components/LoginForm";
 
 
@@ -75,16 +70,10 @@ class LoginPage extends Component {
 									<img src={require("./images/img-01.png")} alt={"IMG.."} />
 								</div>
 								<LoginForm username={this.state.username}
-<<<<<<< HEAD
-								 password={this.state.password}
-								 handleChange={this.handleChange}
-								 handleSubmit={this.handleSubmit}/>
-=======
 										   password={this.state.password}
 										   handleChange = {this.handleChange}
 										   handleSubmit = {this.handleSubmit}
 								/>
->>>>>>> 6a9189c753918c53f2ede1b81d8b9446ffb7eb1b
 							</div>
 						</div>
 					</div>

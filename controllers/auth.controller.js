@@ -59,7 +59,8 @@ router.post('/logout',
 
 // Signup
 router.post('/signup', (req, res) => {
-    const { username, password } = req.body;
+    console.log("post is running")
+    const { name,lastName,email,username, password } = req.body;
     // TODO Add Validation
     User.findOne({ where: { 'username': username } }).then((err, userMatch) => {
         if (userMatch) {
@@ -68,6 +69,9 @@ router.post('/signup', (req, res) => {
             })
         }
         User.create({
+            "name":name,
+            "lastName":lastName,
+            "email":email,
             "username": username,
             "password": password
         }, {}).then(err => {

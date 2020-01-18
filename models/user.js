@@ -4,13 +4,13 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define(
     "User",
     {
-      firstName: DataTypes.STRING,
+      name: DataTypes.STRING,
       lastName: DataTypes.STRING,
       email: DataTypes.STRING,
       username: DataTypes.STRING,
       password: DataTypes.STRING,
-      signUpDate: DataTypes.DATETIME,
-      lastLogin: DataTypes.DATETIME
+      signUpDate: DataTypes.DATE,
+      lastLogin: DataTypes.DATE
     },
     {
       hooks: {
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
   User.associate = function(models) {
-    User.hasMany(models.Group, {
+    User.hasMany(models.Messages, {
       onDelete: "cascade"
     });
   };
