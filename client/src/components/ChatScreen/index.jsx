@@ -5,7 +5,10 @@ import Message from "../Message";
 function renderMeg(conversation, user, target){
     return conversation.map(meg => {
         return(
-            <Message sender={meg.user_is_sender ? user:target } is_send={meg.user_is_sender} meg={meg.meg}/>
+            <Message sender={meg.user_is_sender ? user:target }
+                     is_send={meg.user_is_sender}
+                     meg={meg.meg}
+                     date={meg.date}/>
         )
     })
 }
