@@ -63,9 +63,13 @@ class LoginForm extends React.Component{
     render(){
         return(
                         <form className={"login100-form validate-form"}>
+
+                       
                             <span className="login100-form-title">
-                                Member Login
+                              DARIO
+                            {/* <img src={'./images/dario-dario.png'}/> */}
                             </span>
+
                             <div className={this.state.signName}
                                  data-validate="name is required">
 
@@ -98,15 +102,6 @@ class LoginForm extends React.Component{
                                         onClick={this.handleMySubmit}>
                                     Login
                                 </button>
-                            </div>
-
-                            <div className="text-center p-t-12">
-                                <span className="txt1">
-                                    Forgot
-                                </span>
-                                <a className="txt2" href="#">
-                                    Username / Password?
-                                </a>
                             </div>
 
                             <div className="text-center p-t-136">

@@ -67,7 +67,7 @@ class LoginPage extends Component {
 						<div className={"container-login100"}>
 							<div className={"wrap-login100"}>
 								<div className={"login100-pic js-tilt"} data-tilt>
-									<img src={require("./images/img-01.png")} alt={"IMG.."} />
+									<img src={require("./images/dario-bird.png")} alt={"IMG.."} />
 								</div>
 								<LoginForm username={this.state.username}
 										   password={this.state.password}
