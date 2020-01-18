@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import ChatRoom from "./pages/ChatRoom";
 import { NavBar } from './components'
 
+
+
 class App extends Component {
 	constructor(props) {
 		super(props);
