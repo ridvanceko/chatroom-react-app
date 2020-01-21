@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 require('dotenv').config()
 
-const express = require('express')
+const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -14,9 +14,9 @@ const SessionStore = require('express-session-sequelize')(expressSession.Store);
 const passport = require('./utils/passport');
 const db = require("./models");
 const path = require('path');
-const app = express()
+const app = express();
 const routes = require("./controllers");
-const PORT = process.env.PORT || 8081
+const PORT = process.env.PORT || 8081;
 const Sequelize = require('sequelize');
 // const db = new Sequelize('test', 'root', 'root', {
 //     host: 'localhost',
@@ -29,12 +29,12 @@ const sequelizeSessionStore = new SessionStore({
  
 
 // ===== Middleware ====
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(
 	bodyParser.urlencoded({
 		extended: false
 	})
-)
+);
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -45,16 +45,16 @@ app.use(
 		resave: false,
 		saveUninitialized: false,
 	})
-)
+);
 
 // ===== Passport ====
-app.use(passport.initialize())
-app.use(passport.session()) // will call the deserializeUser
+app.use(passport.initialize());
+app.use(passport.session()); // will call the deserializeUser
 
 
 // ==== if its production environment!
 if (process.env.NODE_ENV === "production") {
-	console.log("Prod Mode Enabled")
+	console.log("Prod Mode Enabled");
 	app.use(express.static("client/build"));
 }
 
@@ -68,10 +68,10 @@ app.get("*", (req, res) => {
 
 // ====== Error handler ====
 app.use(function (err, req, res, next) {
-	console.log('====== ERROR =======')
-	console.error(err.stack)
+	console.log('====== ERROR =======');
+	console.error(err.stack);
 	res.status(500)
-})
+});
 
 // ====== Sync Models to Database
 let force = false;
@@ -83,7 +83,7 @@ if (process.env.NODE_ENV === "development") {
 // ==== Starting Server =====
 
 db.sequelize.sync({ force: force }).then(function () {
-	console.log(`Sequlize connected`)
+	console.log(`Sequlize connected`);
 	app.listen(PORT, () => {
 		console.log(`App listening on PORT: ${PORT}`)
 	})

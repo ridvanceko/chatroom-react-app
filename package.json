@@ -41,6 +41,5 @@
 	},
 	"engines": {
 		"node": "12.13.0"
-	},
-	"proxy": "http://localhost:8081"
+	}
 }

@@ -1,0 +1,209 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"
+    ></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <!--Coded With Love By Mutiullah Samim-->
+  <body>
+    <!-- <img src="assets/css/images/DARIO-hamjrs (2).png"> -->
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center h-100">
+        <div class="col-md-4 col-xl-3 chat">
+          <div class="card mb-sm-3 mb-md-0 contacts_card">
+            <div class="card-header">
+              <div class="input-group">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  name=""
+                  class="form-control search"
+                />
+                <div class="input-group-prepend">
+                  <span class="input-group-text search_btn"
+                    ><i class="fas fa-search"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body contacts_body">
+              <li class="contacts"></li>
+              <li class="active">
+                <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                    <img
+                      src="assets/css/images/Hamrah.png"
+                      class="rounded-circle user_img"
+                    />
+                    <span class="online_icon"></span>
+                  </div>
+                  <div class="user_info">
+                    <span>Hamrah</span>
+                    <p>Hamrah is online</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                    <img
+                      src="assets/css/images/Jesus.png"
+                      class="rounded-circle user_img"
+                    />
+                    <span class="online_icon offline"></span>
+                  </div>
+                  <div class="user_info">
+                    <span>Jesus</span>
+                    <p>Jesus left 7 mins ago</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                    <img
+                      src="assets/css/images/Ridvan .png"
+                      class="rounded-circle user_img"
+                    />
+                    <span class="online_icon"></span>
+                  </div>
+                  <div class="user_info">
+                    <span>Ridvan</span>
+                    <p>Ridvan is online</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                    <img
+                      src="assets/css/images/shiyu.png"
+                      class="rounded-circle user_img"
+                    />
+                    <span class="online_icon offline"></span>
+                  </div>
+                  <div class="user_info">
+                    <span>Shiyu</span>
+                    <p>Shiyu left 30 mins ago</p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                    <img
+                      src="assets/css/images/Jesus.png"
+                      class="rounded-circle user_img"
+                    />
+                    <span class="online_icon offline"></span>
+                  </div>
+                  <div class="user_info">
+                    <span>Dario</span>
+                    <p>Dario left 10 mins ago</p>
+                  </div>
+                </div>
+              </li>
+              <li></li>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+        <div class="col-md-8 col-xl-6 chat">
+          <div class="card">
+            <div class="card-header msg_head">
+              <div class="d-flex bd-highlight">
+                <div class="img_cont">
+                  <img
+                    src="assets/css/images/Hamrah.png"
+                    class="rounded-circle user_img"
+                  />
+                  <span class="online_icon"></span>
+                </div>
+                <div class="user_info">
+                  <span>Chat with Hamrah</span>
+                  <p>3 Messages</p>
+                </div>
+                <div class="video_cam">
+                  <span><i class="fas fa-video"></i></span>
+                  <span><i class="fas fa-phone"></i></span>
+                </div>
+              </div>
+              <span id="action_menu_btn"
+                ><i class="fas fa-ellipsis-v"></i
+              ></span>
+              <div class="action_menu">
+                <ul>
+                  <li><i class="fas fa-user-circle"></i> View profile</li>
+                  <li><i class="fas fa-users"></i> Add to close friends</li>
+                  <li><i class="fas fa-plus"></i> Add to group</li>
+                  <li><i class="fas fa-ban"></i> Block</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body msg_card_body">
+				<div class="title">Chat</div>
+			</div>
+			<ul id ="messages" class="messages">
+				
+			</ul>
+            </div>
+            <div class="card-footer">
+              <div class="bottom_wrapper clearfix">
+                <i id="typing"></i>
+                <form id="form">
+                  <div class="message_input_wrapper">
+                    <input
+                      id="message"
+                      class="message_input"
+                      placeholder="Type your message here..."
+                    />
+                  </div>
+                  <button class="send_message input-group-text send_btn">
+                    Send
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/socket.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/rexeze/formatTimeStamp/src/index-cdn.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>
