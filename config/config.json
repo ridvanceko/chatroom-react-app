@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "test",
+    "password": "zap",
+    "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -10,7 +10,7 @@
   "production": {
     "username": "root",
     "password": "root",
-    "database": "test",
+    "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
