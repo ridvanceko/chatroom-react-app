@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       username: DataTypes.STRING,
       password: DataTypes.STRING,
       signUpDate: DataTypes.DATE,
-      lastLogin: DataTypes.DATE
+      lastLogin: DataTypes.DATE,
     },
     {
       hooks: {
@@ -43,7 +43,6 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   User.prototype.validPassword = function (password) {
-    console.log(password, "password" , User.password,"this.password")
     console.log(bcrypt.compareSync(password, User.password))
 
     return bcrypt.compareSync(password, this.password);
