@@ -9,10 +9,11 @@ class ChatRoom extends Component {
     constructor(props){
         super(props);
         this.state =  {
+            user : this.props.user,
             friendList: [
                 {   name: "Rachel MacAdams",
                     photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),
-                    is_active: true,
+                    is_active: false,
                     is_online: true
                 },
                 {   name: "Ridvan",
@@ -73,7 +74,10 @@ class ChatRoom extends Component {
         };
         this.target_change = this.target_change.bind(this);
     }
+    componentDidMount(){
+        this.props._getAllUsers()
 
+    }
     target_change(name){
         this.state.friendList.forEach(friend =>{
             if(friend.name === name) this.setState({...friend.is_active=true});

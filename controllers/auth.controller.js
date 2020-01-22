@@ -32,6 +32,7 @@ router.get('/user',
 // Login
 router.post('/login',
     (req, res, next) => {
+        console.log("preparing to auth login ");
         next()
     },
     passport.authenticate('local'),
@@ -41,6 +42,7 @@ router.post('/login',
         if (cleanUser.password) {
             delete cleanUser.password
         }
+        console.log("clean user",cleanUser)
         res.json({ user: cleanUser })
     }
 );

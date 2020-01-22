@@ -77,7 +77,7 @@ app.use(function (err, req, res, next) {
 let force = false;
 
 if (process.env.NODE_ENV === "development") {
-	force = true;
+	force = false;
 }
 
 // ==== Starting Server =====
