@@ -28,7 +28,7 @@ class ChatRoom extends Component {
                 {   name: "Hamrah",
                     photo: require("../../pages/ChatRoom/assets/images/Hamrah.png"),
                     is_active: false,
-                    is_online: false
+                    is_online: true
                 },
                 {   name: "Jesus",
                     photo: require("../../pages/ChatRoom/assets/images/Jesus.png"),
@@ -54,7 +54,7 @@ class ChatRoom extends Component {
                 target_is_online: true,
                 conversation: [{
                     meg: "Hey, I just want to say I LOVE YOU, Shiyu !!!",
-                    user_is_sender: false,
+                    user_is_sender: true,
                     date: "9:00 AM, Today"
                 },{
                     meg: "Awww, really! I love you too, my sweet heart! Do you have time on this weekend?",
@@ -97,4 +97,5 @@ class ChatRoom extends Component {
             )
     }
 }
+
 export default ChatRoom;
