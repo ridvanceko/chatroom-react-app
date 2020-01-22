@@ -49,6 +49,7 @@ class App extends Component {
 	}
 
 	_login(username, password) {
+		console.log("run _login: "+username+" "+password);
 		axios
 			.post('/auth/login', {
 				username,

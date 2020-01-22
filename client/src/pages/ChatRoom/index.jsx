@@ -12,7 +12,7 @@ class ChatRoom extends Component {
             friendList: [
                 {   name: "Rachel",
                     photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),
-                    is_active: true,
+                    is_active: false,
                     is_online: true
                 },
                 {   name: "Ridvan",
@@ -47,7 +47,7 @@ class ChatRoom extends Component {
                     user_is_sender: false,
                 },{
                     meg: "Awww, really! I love you too, my sweet heart! Do you have time on this weekend?",
-                    user_is_sender: true,
+                    sender : shiyu,
                 },{
                     meg: "Hehe, I do have time on this weekend!",
                     user_is_sender: false,
