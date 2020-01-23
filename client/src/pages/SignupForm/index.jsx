@@ -24,6 +24,8 @@ export default class SignupForm extends Component {
 		})
 	}
 
+	
+
 	handleSubmit(event) {
 		console.log("submit")
 		event.preventDefault();
@@ -54,9 +56,10 @@ export default class SignupForm extends Component {
 		}
 		return (
 			<div className="SignupForm">
-				<h1>Signup form</h1>
-				<label htmlFor="name">Name: </label>
-				<input
+				
+				<div className="wrap-signup100">
+				<label  htmlFor="name">Name: </label>
+				<input className="signup-box-100"
 					autoComplete="false"
 					type="text"
 					name="name"
@@ -64,15 +67,15 @@ export default class SignupForm extends Component {
 					onChange={this.handleChange}
 				/>
 				<label htmlFor="username">Lastname: </label>
-				<input
+				<input className="signup-box-100"
 					autoComplete="false"
 					type="text"
 					name="lastName"
 					value={this.state.lastName}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="email">E-mail address: </label>
-				<input
+				<label  htmlFor="email">E-mail address: </label>
+				<input className="signup-box-100"
 					autoComplete="false"
 					type="email"
 					name="email"
@@ -80,7 +83,7 @@ export default class SignupForm extends Component {
 					onChange={this.handleChange}
 				/>
 				<label htmlFor="username">Username: </label>
-				<input
+				<input className="signup-box-100"
 					autoComplete="false"
 					type="text"
 					name="username"
@@ -88,22 +91,23 @@ export default class SignupForm extends Component {
 					onChange={this.handleChange}
 				/>
 				<label htmlFor="password">Password: </label>
-				<input
+				<input className="signup-box-100"
 					autoComplete="false"
 					type="password"
 					name="password"
 					value={this.state.password}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="confirmPassword">Confirm Password: </label>
-				<input
+				<label  htmlFor="confirmPassword">Confirm Password: </label>
+				<input className="signup-box-100"
 					autoComplete="false"
 					type="password"
 					name="confirmPassword"
 					value={this.state.confirmPassword}
 					onChange={this.handleChange}
 				/>
-				<button onClick={this.handleSubmit}>Sign up</button>
+				<button className="signup-button" onClick={this.handleSubmit}>SIGN UP</button>
+				</div>
 			</div>
 		)
 	}
