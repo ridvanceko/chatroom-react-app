@@ -35,12 +35,12 @@ class ChatScreen extends Component {
                                 <span>Chat with {this.props.target_name}</span>
                                 <p>3 Messages</p>
                             </div>
-                            <div className="video_cam">
+                            {/* <div className="video_cam">
                                 <span><i className="fas fa-video"/></span>
                                 <span><i className="fas fa-phone"/></span>
-                            </div>
+                            </div> */}
                         </div>
-                        <span id="action_menu_btn"><i className="fas fa-ellipsis-v"/></span>
+                        {/* <span id="action_menu_btn"><i className="fas fa-ellipsis-v"/></span>
                         <div className="action_menu">
                             <ul>
                                 <li><i className="fas fa-user-circle"/> View profile</li>
@@ -48,7 +48,7 @@ class ChatScreen extends Component {
                                 <li><i className="fas fa-plus"/> Add to group</li>
                                 <li><i className="fas fa-ban"/> Block</li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="card-body msg_card_body">
                         {renderMeg(this.state.conversation,this.props.user_photo, this.props.target_photo)}
