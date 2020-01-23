@@ -55,6 +55,7 @@ export default class SignupForm extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		}
 		return (
+			
 			<div className="SignupForm">
 				
 				<div className="wrap-signup100">
