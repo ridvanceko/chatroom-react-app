@@ -4,13 +4,13 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define(
     "User",
     {
-      name: DataTypes.STRING,
+      firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
       email: DataTypes.STRING,
-      username: DataTypes.STRING,
+      userName: DataTypes.STRING,
       password: DataTypes.STRING,
       signUpDate: DataTypes.DATE,
-      lastLogin: DataTypes.DATE
+      lastLogin: DataTypes.DATE,
     },
     {
       hooks: {
@@ -25,6 +25,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     }
+
+    
+
+
   );
 
   User.associate = function(models) {
@@ -37,6 +41,12 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
+
+  User.prototype.validPassword = function (password) {
+    console.log(bcrypt.compareSync(password, User.password))
+
+    return bcrypt.compareSync(password, this.password);
+  }
 
   return User;
 };
