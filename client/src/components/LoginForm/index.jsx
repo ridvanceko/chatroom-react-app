@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
             return this.setState({
                 signPassword: "wrap-input100 validate-input alert-validate"
             });
-        } else {
+        } else { 
             return this.setState({
                 signName: "wrap-input100 validate-input alert-validate"
             });

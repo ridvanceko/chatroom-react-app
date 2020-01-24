@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import SignUpComponent  from '../../components/SignUpComponent'
-import './signup.css';
 
 class SignUpPage extends Component {
 	constructor() {
@@ -58,16 +57,26 @@ class SignUpPage extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		}
 		return (
-			<SignUpComponent
-				firstName={this.state.firstName}
-				lastName={this.state.lastName}
-				email={this.state.email}
-				userName={this.state.userName}
-				password={this.state.password}
-				confirmPassword={this.state.confirmPassword}
-				handleChange={this.handleChange}
-				handleSubmit={this.handleSubmit}
-			/>
+			<div className={"limiter"}>
+						<div className={"container-login100"}>
+							<div className={"wrap-login100"}>
+								<div className={"signup100-pic"} data-tilt>
+									<img src={require("./images/DARIO-hamjrs.png")} class={"my-5"} width="300px" alt={"IMG.."} />
+								</div>
+										<SignUpComponent
+											firstName={this.state.firstName}
+											lastName={this.state.lastName}
+											email={this.state.email}
+											userName={this.state.userName}
+											password={this.state.password}
+											confirmPassword={this.state.confirmPassword}
+											handleChange={this.handleChange}
+											handleSubmit={this.handleSubmit}
+										/>
+					</div>
+						</div>
+					</div>
+			
 		)
 	}
 }

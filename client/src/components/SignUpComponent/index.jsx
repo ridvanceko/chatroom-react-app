@@ -180,7 +180,10 @@ class SignUpComponent extends React.Component {
                         onChange={this.props.handleChange}
                     />
                     <span className="focus-input100"></span>
+                    <span className="symbol-input100"><i className="fa fa-user" aria-hidden="true"></i></span>
                 </div>
+
+
                 <div className={this.state.SlastName}
                     data-validate="valid lastname is required ">
                     <label htmlFor="lastname">Lastname: </label>
@@ -243,7 +246,13 @@ class SignUpComponent extends React.Component {
                     />
                     <span className="focus-input100"></span>
                 </div>
-                <button className="signup-button" onClick={this.handleMySubmit}>SIGN UP</button>
+
+                
+
+                <div className="container-login100-form-btn">
+                    <button className="signup-button login100-form-btn" onClick={this.handleMySubmit}>SIGN UP</button>
+                </div>
+
               
             </form>
         )
