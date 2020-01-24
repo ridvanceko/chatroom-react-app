@@ -6,9 +6,9 @@ export default class UserInput extends Component{
         return (
             <div className="card-footer">
                 <div className="input-group">
-                    <div className="input-group-append">
+                    {/* <div className="input-group-append">
                         <span className="input-group-text attach_btn"><i className="fas fa-paperclip"/></span>
-                    </div>
+                    </div> */}
                     <textarea name="" className="form-control type_msg"
                               placeholder="Type your message..."/>
                     <div className="input-group-append">
