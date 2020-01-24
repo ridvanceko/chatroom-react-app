@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
-import SignupForm from './pages/SignupForm'
+import SignUpPage from './pages/SignUpPage'
 import Home from './pages/Home'
 import ChatRoom from "./pages/ChatRoom";
 import { NavBar } from './components'
@@ -87,7 +87,7 @@ class App extends Component {
 				<Route exact path="/login" render={
 					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
 				} />
-				<Route exact path="/signup" component={SignupForm} />
+				<Route exact path="/signup" component={SignUpPage} />
 				<Route exact path="/chatroom" component={ChatRoom} _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} />
 			</div>
 		)

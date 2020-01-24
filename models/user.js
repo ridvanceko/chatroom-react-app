@@ -4,10 +4,10 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define(
     "User",
     {
-      name: DataTypes.STRING,
+      firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
       email: DataTypes.STRING,
-      username: DataTypes.STRING,
+      userName: DataTypes.STRING,
       password: DataTypes.STRING,
       signUpDate: DataTypes.DATE,
       lastLogin: DataTypes.DATE,
