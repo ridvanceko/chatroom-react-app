@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignUpComponent from "../../components/SignUpComponent";
+import "./css/main.css"
 
 class SignUpPage extends Component {
   constructor() {
@@ -55,6 +56,7 @@ class SignUpPage extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />;
     }
     return (
+      <div className="signupForm">
       <div className={"limiter"}>
         <div className={"container-login100"}>
           <div className={"wrap-login100 sign-up"}>
@@ -78,6 +80,7 @@ class SignUpPage extends Component {
             />
           </div>
         </div>
+      </div>
       </div>
     );
   }

@@ -453,6 +453,10 @@ iframe {
   right: 13px;
 }
 
+.LoginForm .alert-validate::after {
+  top: 50%;
+}
+
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;

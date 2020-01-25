@@ -406,7 +406,7 @@ iframe {
   position: relative;
 }
 
-.alert-validate::before {
+.signupForm .alert-validate::before {
   content: attr(data-validate);
   position: absolute;
   max-width: 70%;
@@ -414,7 +414,7 @@ iframe {
   border: 1px solid #c80000;
   border-radius: 13px;
   padding: 4px 25px 4px 10px;
-  top: 50%;
+  top: 70%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -445,7 +445,7 @@ iframe {
   position: absolute;
   color: #c80000;
   font-size: 15px;
-  top: 50%;
+  top: 70%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
