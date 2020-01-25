@@ -179,8 +179,8 @@ class SignUpComponent extends React.Component {
                         value={this.props.firstName}
                         onChange={this.props.handleChange}
                     />
-                    <span className="focus-input100"></span>
-                    <span className="symbol-input100"><i className="fa fa-user" aria-hidden="true"></i></span>
+                    <span className="focus-input100 su"  ></span>
+                    <span className="symbol-input100 "><i className="fa fa-user  sign-symbol" aria-hidden="true"></i></span>
                 </div>
 
 
@@ -194,7 +194,7 @@ class SignUpComponent extends React.Component {
                         value={this.props.lastName}
                         onChange={this.props.handleChange}
                     />
-                    <span className="focus-input100"></span>
+                    <span className="focus-input100 su"  ></span><span className="symbol-input100 "><i className="fa fa-user  sign-symbol" aria-hidden="true"></i></span>
                 </div>
                 <div className={this.state.Semail}
                     data-validate="valid email is required">
@@ -206,7 +206,7 @@ class SignUpComponent extends React.Component {
                         value={this.props.email}
                         onChange={this.props.handleChange}
                     />
-                    <span className="focus-input100"></span>
+                    <span className="focus-input100 su"  ></span><span className="symbol-input100 "><i class="fas fa-at sign-symbol" aria-hidden="true"></i></span>
                 </div>
                 <div className={this.state.SuserName}
                     data-validate="username is required (more than 6 letters)">
@@ -218,7 +218,7 @@ class SignUpComponent extends React.Component {
                         value={this.props.userName}
                         onChange={this.props.handleChange}
                     />
-                    <span className="focus-input100"></span>
+                    <span className="focus-input100 su"  ></span><span className="symbol-input100 "><i className="fa fa-user  sign-symbol" aria-hidden="true"></i></span>
                 </div>
                 <div className={this.state.Spassword}
                     data-validate="password is required (more than 6 letters)">
@@ -231,7 +231,7 @@ class SignUpComponent extends React.Component {
                         value={this.props.password}
                         onChange={this.props.handleChange}
                     />
-                    <span className="focus-input100"></span>
+                    <span className="focus-input100 su"  ></span><span className="symbol-input100"><i class="fas fa-lock sign-symbol" aria-hidden="true"></i></span>
                 </div>
                 <div className={this.state.SconfirmPassword}
                     data-validate="passwords does not match">
@@ -244,7 +244,7 @@ class SignUpComponent extends React.Component {
                         value={this.props.confirmPassword}
                         onChange={this.props.handleChange}
                     />
-                    <span className="focus-input100"></span>
+                    <span className="focus-input100 su"  ></span><span className="symbol-input100 "><i class="fas fa-lock sign-symbol" aria-hidden="true"></i></span>
                 </div>
 
                 
