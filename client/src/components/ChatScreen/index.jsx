@@ -17,15 +17,6 @@ function renderMeg(conversation, user, target) {
 }
 
 class ChatScreen extends Component {
-<<<<<<< HEAD
-    
-    constructor(props){
-        super(props);
-        this.state = {
-            conversation: this.props.conversation
-        }
-    }
-=======
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +32,6 @@ class ChatScreen extends Component {
       socket.emit("my other event", { my: "data" });
     });
   }
->>>>>>> aaad21dfddc43358993aa08fb809fc141065ec80
 
   render() {
     return (
