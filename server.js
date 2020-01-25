@@ -74,7 +74,7 @@ app.use(function (err, req, res, next) {
 });
 
 // ====== Sync Models to Database
-let force = false;
+let force = true;
 
 if (process.env.NODE_ENV === "development") {
 	force = true;
