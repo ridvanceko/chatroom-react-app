@@ -10,6 +10,7 @@ class ChatRoom extends Component {
         super(props);
         this.state =  {
             user : this.props.user,
+            //gonna_sent: ""  (update from input component)
             friendList: [
                 {   name: "Rachel Cheng",
                     photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),

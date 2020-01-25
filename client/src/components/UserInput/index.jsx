@@ -19,3 +19,7 @@ export default class UserInput extends Component{
         );
     }
 }
+
+/// store input in database and send to socket
+// when user type any words, use the onchange function to update (setState) to the ChatRoom
+// The onnchange function is passed down to this component from Chatroom

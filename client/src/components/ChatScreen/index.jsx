@@ -14,6 +14,7 @@ function renderMeg(conversation, user, target){
 }
 
 class ChatScreen extends Component {
+    
     constructor(props){
         super(props);
         this.state = {
