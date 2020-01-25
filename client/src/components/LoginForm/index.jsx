@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
@@ -103,12 +104,13 @@ class LoginForm extends React.Component {
                         Login
                                 </button>
                 </div>
-
+               
                 <div className="text-center p-t-136">
-                    <a className="txt2" href="#">
+                <li className="nav-item">
+                        <Link to="/signup" className="nav-link">
                         Create your Account
-                                    <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                    </a>
+						</Link>
+                    </li>
                 </div>
             </form>
         )
