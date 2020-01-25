@@ -57,11 +57,11 @@ class SignUpPage extends Component {
     return (
       <div className={"limiter"}>
         <div className={"container-login100"}>
-          <div className={"wrap-login100"}>
+          <div className={"wrap-login100 sign-up"}>
             <div className={"signup100-pic"} data-tilt>
               <img
                 src={require("./images/DARIO-hamjrs.png")}
-                class={"my-5"}
+                class={"my-5 sign-up-image"}
                 width="300px"
                 alt={"IMG.."}
               />

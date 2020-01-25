@@ -79,10 +79,10 @@ class App extends Component {
 		return (
 			<div className="">
 				{/*/!* Navbar on every page *!/*/}
-				<NavBar _logout={this._logout} loggedIn={this.state.loggedIn} />
+				{/* /*<NavBar _logout={this._logout} loggedIn={this.state.loggedIn} /> */}
 				{/*  Individual Things */}
 				<Route exact path="/" render={
-					() => <Home user={this.state.user} />
+					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
 				} />
 				<Route exact path="/login" render={
 					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
