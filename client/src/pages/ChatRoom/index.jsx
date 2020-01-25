@@ -96,6 +96,7 @@ class ChatRoom extends Component {
                                     target_is_online={this.state.chatScreen.target_is_online}
                                     target_name={this.state.chatScreen.target_name}
                                     conversation={this.state.chatScreen.conversation}
+                                    user={this.props.user}
                         />
                     </div>
                 </div>
