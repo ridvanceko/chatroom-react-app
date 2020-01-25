@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UserInput from "../UserInput";
 import Message from "../Message";
+import io from "socket.io-client"
 
 function renderMeg(conversation, user, target) {
   return conversation.map(meg => {
@@ -23,7 +24,8 @@ class ChatScreen extends Component {
     };
   }
   componentDidMount() {
-    var socket = io.connect("http://localhost:8081");
+    var socket = io("127.0.0.1:8081");
+    console.log("socket",socket)
     socket.emit("new user connected",this.props.user)
     socket.on("news", function(data) {
       console.log(data);

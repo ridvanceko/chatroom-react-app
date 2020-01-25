@@ -72,8 +72,8 @@ app.use(function(err, req, res, next) {
 });
 
 // ====== socket.io server
-var server = require("http").Server(app);
-var io = require("socket.io")(server);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 // ====== Sync Models to Database
 let force = true;
@@ -86,13 +86,14 @@ if (process.env.NODE_ENV === "development") {
 
 db.sequelize.sync({ force: force }).then(function() {
   console.log(`Sequlize connected`);
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`);
   });
 });
 
 // ============== socket.io connection
 io.on("connection", socket => {
+  console.log("uswr connected to socket server")
   socket.on("new user connected", msg => {
     console.log(msg);
   });
