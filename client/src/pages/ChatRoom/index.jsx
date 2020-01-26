@@ -75,7 +75,7 @@ class ChatRoom extends Component {
         this.target_change = this.target_change.bind(this);
     }
     componentDidMount(){
-        this.props._getAllUsers()
+        // this.props._getAllUsers()
 
     }
     target_change(name){
