@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Route } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
-import SignupForm from './pages/SignupForm'
+import SignUpPage from './pages/SignUpPage'
 import Home from './pages/Home'
 import ChatRoom from "./pages/ChatRoom";
 import { NavBar } from './components'
@@ -79,16 +79,16 @@ class App extends Component {
 		return (
 			<div className="">
 				{/*/!* Navbar on every page *!/*/}
-				<NavBar _logout={this._logout} loggedIn={this.state.loggedIn} />
+				{/* /*<NavBar _logout={this._logout} loggedIn={this.state.loggedIn} /> */}
 				{/*  Individual Things */}
 				<Route exact path="/" render={
-					() => <Home user={this.state.user} />
+					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
 				} />
 				<Route exact path="/login" render={
 					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
 				} />
-				<Route exact path="/signup" component={SignupForm} />
-				<Route exact path="/chatroom" component={ChatRoom} _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} />
+				<Route exact path="/signup" component={SignUpPage} />
+				<Route exact path="/chatroom" component={ChatRoom} user={this.state.user} _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} />
 			</div>
 		)
 	}

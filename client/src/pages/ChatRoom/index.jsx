@@ -11,7 +11,7 @@ class ChatRoom extends Component {
         this.state =  {
             user : this.props.user,
             friendList: [
-                {   name: "Rachel MacAdams",
+                {   name: "Rachel Cheng",
                     photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),
                     is_active: false,
                     is_online: true
@@ -95,6 +95,7 @@ class ChatRoom extends Component {
                                     target_is_online={this.state.chatScreen.target_is_online}
                                     target_name={this.state.chatScreen.target_name}
                                     conversation={this.state.chatScreen.conversation}
+                                    user={this.props.user}
                         />
                     </div>
                 </div>

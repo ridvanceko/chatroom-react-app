@@ -7,10 +7,10 @@ export default class SignupForm extends Component {
 	constructor() {
 		super()
 		this.state = {
-			name: '',
+			firstName: '',
 			lastName: '',
 			email: '',
-			username: '',
+			userName: '',
 			password: '',
 			confirmPassword: '',
 			redirectTo: null
@@ -32,9 +32,9 @@ export default class SignupForm extends Component {
 		// TODO - validate!
 		axios
 			.post('/auth/signup', {
-				username: this.state.username,
+				userName: this.state.userName,
 				password: this.state.password,
-				name :this.state.name,
+				firstName :this.state.name,
 				lastName :this.state.lastName,
 				email :this.state.email
 			})
@@ -63,7 +63,7 @@ export default class SignupForm extends Component {
 				<input className="signup-box-100"
 					autoComplete="false"
 					type="text"
-					name="name"
+					name="firstName"
 					value={this.state.name}
 					onChange={this.handleChange}
 				/>
@@ -87,7 +87,7 @@ export default class SignupForm extends Component {
 				<input className="signup-box-100"
 					autoComplete="false"
 					type="text"
-					name="username"
+					name="userName"
 					value={this.state.username}
 					onChange={this.handleChange}
 				/>

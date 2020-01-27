@@ -1,16 +1,16 @@
 {
   "development": {
     "username": "root",
-    "password": "echoes27",
-    "database": "testdb",
+    "password": "root",
+    "database": "83828732Mysql",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
     "username": "root",
-    "password": "echoes27",
-    "database": "test",
+    "password": "root",
+    "database": "83828732Mysql",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
