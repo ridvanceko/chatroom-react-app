@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
                 <div className={this.state.signName}
                     data-validate="name is required">
 
-                    <input className={"input100"}
+                    <input className={"logininput100"}
                         type={"text"}
                         name={"username"}
                         value={this.props.username}
@@ -82,19 +82,19 @@ class LoginForm extends React.Component {
                         onClick={this.hideValidate}
                         placeholder={"name"} />
 
-                    <span className="focus-input100"></span>
-                    <span className="symbol-input100"><i className="fa fa-user" aria-hidden="true"></i></span>
+                    <span className="focus-logininput100"></span>
+                    <span className="symbol-logininput100"><i className="fa fa-user" aria-hidden="true"></i></span>
                 </div>
 
                 <div className={this.state.signPassword} data-validate="Password is required">
-                    <input className={"input100"}
+                    <input className={"logininput100"}
                         type={"password"}
                         name={"password"}
                         value={this.props.password}
                         onChange={this.props.handleChange}
                         placeholder="Password" />
-                    <span className="focus-input100"></span>
-                    <span className="symbol-input100"><i className="fa fa-lock" aria-hidden="true"></i></span>
+                    <span className="focus-logininput100"></span>
+                    <span className="symbol-logininput100"><i className="fa fa-lock" aria-hidden="true"></i></span>
 
                 </div>
 

@@ -36,7 +36,8 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+  font-family: Poppins-Regular, sans-serif;
+ 
 }
 
 /*---------------------------------------------*/
@@ -233,7 +234,7 @@ iframe {
   margin-bottom: 10px;
 }
 
-.input100 {
+.logininput100 {
   font-family: Poppins-Medium;
   font-size: 15px;
   line-height: 1.5;
@@ -250,7 +251,7 @@ iframe {
 
 /*------------------------------------------------------------------
 [ Focus ]*/
-.focus-input100 {
+.focus-logininput100 {
   display: block;
   position: absolute;
   border-radius: 25px;
@@ -263,7 +264,7 @@ iframe {
   color: #5cc3f3;
 }
 
-.input100:focus + .focus-input100 {
+.logininput100:focus + .focus-logininput100 {
   -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
   animation: anim-shadow 0.5s ease-in-out forwards;
 }
@@ -282,7 +283,7 @@ iframe {
   }
 }
 
-.symbol-input100 {
+.symbol-logininput100 {
   font-size: 15px;
 
   display: -webkit-box;
@@ -307,7 +308,7 @@ iframe {
   transition: all 0.4s;
 }
 
-.input100:focus + .focus-input100 + .symbol-input100 {
+.logininput100:focus + .focus-logininput100 + .symbol-logininput100 {
   color: #5cc3f3;
   padding-left: 28px;
 }

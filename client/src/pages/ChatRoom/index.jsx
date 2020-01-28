@@ -58,6 +58,7 @@ class ChatRoom extends Component {
         //     user_is_sender: false,
         // }],
 
+
         user_name: "Shiyu",
         user_photo: require("../../pages/ChatRoom/assets/images/shiyu.png"),
         target_name: "Rachel",
