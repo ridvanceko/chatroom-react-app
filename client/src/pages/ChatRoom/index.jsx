@@ -134,7 +134,7 @@ class ChatRoom extends Component {
             <div className={"login100-pic js-tilt"} data-tilt>
               <img
                 src={require("./images/logo.png")}
-                class={"my-5"}
+                className={"my-5"}
                 width="300px"
                 alt={"IMG.."}
               />

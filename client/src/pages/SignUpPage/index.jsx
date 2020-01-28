@@ -63,7 +63,7 @@ class SignUpPage extends Component {
             <div className={"signup100-pic"} data-tilt>
               <img
                 src={require("./images/DARIO-hamjrs.png")}
-                class={"my-5 sign-up-image"}
+                className={"my-5 sign-up-image"}
                 width="300px"
                 alt={"IMG.."}
               />

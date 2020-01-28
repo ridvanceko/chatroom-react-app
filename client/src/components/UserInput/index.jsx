@@ -14,8 +14,12 @@ export default class UserInput extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.props.socket.emit("sent message", this.state.messageText);
-    this.props.handleMessages(this.state.messageText);
+    const msgFull = {
+      messageText: this.state.messageText,
+      sender: this.props.user
+    };
+    this.props.socket.emit("sent message", msgFull);
+    this.props.handleMessages(msgFull);
     this.setState({ messageText: "" });
   }
 

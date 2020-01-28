@@ -3,9 +3,9 @@ import axios from 'axios'
 import { Route } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import SignUpPage from './pages/SignUpPage'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import ChatRoom from "./pages/ChatRoom";
-import { NavBar } from './components'
+// import { NavBar } from './components'
 
 
 
@@ -46,7 +46,7 @@ class App extends Component {
 		})
 	}
 
-	_login(username, password,callback) {
+	_login(username, password) {
 		// console.log("run _login: " + username + " " + password);
 		axios
 			.post('/auth/login', {
@@ -59,7 +59,7 @@ class App extends Component {
 						loggedIn: true,
 						user: response.data.user
 					});
-					callback;
+			
 					
 				}
 			})

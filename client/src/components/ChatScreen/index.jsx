@@ -19,7 +19,7 @@ function renderMeg(conversation, user, target) {
 
 function renderMSGitem(allMessages) {
   return allMessages.map(msg => {
-    return <h1>{msg}</h1>;
+  return <h1>{msg.sender.userName} -- {msg.messageText}</h1>;
   });
 
   // return (
@@ -99,6 +99,7 @@ class ChatScreen extends Component {
           <UserInput
             handleMessages={this.props.handleMessages}
             socket={this.props.socket}
+            user={this.props.user}
           />
         </div>
       </div>
