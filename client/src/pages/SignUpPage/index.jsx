@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import SignUpComponent from "../../components/SignUpComponent";
-import "./css/main.css"
+import "./css/signupMain.css"
 
 class SignUpPage extends Component {
   constructor() {
@@ -59,11 +59,11 @@ class SignUpPage extends Component {
       <div className="signupForm">
       <div className={"limiter"}>
         <div className={"container-login100"}>
-          <div className={"wrap-login100 sign-up"}>
+          <div className={"wrap-signup100 sign-up"}>
             <div className={"signup100-pic"} data-tilt>
               <img
                 src={require("./images/DARIO-hamjrs.png")}
-                class={"my-5 sign-up-image"}
+                className={"my-5 sign-up-image"}
                 width="300px"
                 alt={"IMG.."}
               />
