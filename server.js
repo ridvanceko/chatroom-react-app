@@ -79,7 +79,7 @@ var io = require('socket.io')(server);
 let force = true;
 
 if (process.env.NODE_ENV === "development") {
-  force = true;
+  force = false;
 }
 
 // ==== Starting Server =====
@@ -96,5 +96,6 @@ io.on("connection", socket => {
   console.log("uswr connected to socket server")
   socket.on("new user connected", msg => {
     console.log(msg);
+    socket.emit("new user connected","see your msg")
   });
 });

@@ -20,16 +20,17 @@ class ChatScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      conversation: this.props.conversation
+      conversation: this.props.conversation,
+      user : this.props.user
     };
+    
   }
   componentDidMount() {
     var socket = io("127.0.0.1:8081");
-    console.log("socket",socket)
-    socket.emit("new user connected",this.props.user)
-    socket.on("news", function(data) {
+    console.log("user in state",this.state.user)
+    socket.emit("new user connected",this.props.user?this.props.user:"no user available")
+    socket.on("new user connected", function(data) {
       console.log(data);
-      socket.emit("my other event", { my: "data" });
     });
   }
 

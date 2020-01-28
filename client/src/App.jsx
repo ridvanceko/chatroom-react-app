@@ -46,8 +46,9 @@ class App extends Component {
 		})
 	}
 
-	_logout(event) {
-		event.preventDefault();
+	_logout() {
+		// event.preventDefault();
+		console.log("function is not workind dudeeeeeeeeee")
 		axios.post('/auth/logout').then(response => {
 			if (response.status === 200) {
 				this.setState({
@@ -88,7 +89,7 @@ class App extends Component {
 					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
 				} />
 				<Route exact path="/signup" component={SignUpPage} />
-				<Route exact path="/chatroom" component={ChatRoom} user={this.state.user} _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} />
+				<Route exact path="/chatroom" component={ChatRoom}  _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} />
 			</div>
 		)
 	}

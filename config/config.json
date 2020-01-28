@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "echoes27",
-=======
-    "password": "root",
->>>>>>> da0d1c097314151d427be8053b89f6a5540fa4ab
     "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -13,11 +9,7 @@
   },
   "production": {
     "username": "root",
-<<<<<<< HEAD
     "password": "echoes27",
-=======
-    "password": "root",
->>>>>>> da0d1c097314151d427be8053b89f6a5540fa4ab
     "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
