@@ -58,8 +58,8 @@ class App extends Component {
 		})
 	}
 
-	_login(username, password) {
-		console.log("run _login: " + username + " " + password);
+	_login(username, password,callback) {
+		// console.log("run _login: " + username + " " + password);
 		axios
 			.post('/auth/login', {
 				username,
@@ -70,7 +70,9 @@ class App extends Component {
 					this.setState({
 						loggedIn: true,
 						user: response.data.user
-					})
+					});
+					callback;
+					
 				}
 			})
 	}
@@ -82,13 +84,18 @@ class App extends Component {
 				{/* /*<NavBar _logout={this._logout} loggedIn={this.state.loggedIn} /> */}
 				{/*  Individual Things */}
 				<Route exact path="/" render={
-					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
+					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} loggedIn={this.state.loggedIn} />
 				} />
 				<Route exact path="/login" render={
-					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} />
+					() => <LoginPage _login={this._login} _googleSignin={this._googleSignin} loggedIn={this.state.loggedIn} />
 				} />
-				<Route exact path="/signup" component={SignUpPage} />
-				<Route exact path="/chatroom" component={ChatRoom} user={this.state.user} _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} />
+				<Route exact path="/signup" render={
+					() => <SignUpPage _login={this._login} _googleSignin={this._googleSignin} loggedIn={this.state.loggedIn} />
+				} />
+				<Route exact path="/chatroom" render={
+					() => <ChatRoom _logout={this._logout} _getAllUsers={this._getAllUsers} user={this.state.user} loggedIn={this.state.loggedIn} />
+				} />
+				
 			</div>
 		)
 	}
