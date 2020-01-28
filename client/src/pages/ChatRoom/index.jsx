@@ -46,6 +46,7 @@ class ChatRoom extends Component {
       ],
       onlineUsers: [],
       socket: null,
+      allMessages:[],
       chatScreen: {
         // user_name: "",
         // user_photo: require(""),
@@ -88,9 +89,8 @@ class ChatRoom extends Component {
       }
     };
     this.target_change = this.target_change.bind(this);
+    this.handleMessages= this.handleMessages.bind(this)
   }
-
-
 
   initSocket(user) {
     const socket = io("127.0.0.1:8081");
@@ -106,10 +106,17 @@ class ChatRoom extends Component {
   componentWillMount() {
     this.initSocket(this.props.user);
   }
-
-
-
+  handleMessages(data) {
+    this.setState({
+      allMessages: [...this.state.allMessages, data]
+    });
+  }
   componentDidMount() {
+    this.state.socket.on('reflection from server',msg=>{
+        this.handleMessages(msg)
+    })
+
+
   }
   target_change(name) {
     this.state.friendList.forEach(friend => {
@@ -122,23 +129,24 @@ class ChatRoom extends Component {
     let ham;
     if (!this.props.loggedIn) {
       ham = (
-          <div className={"container-login100"}>
-            <div className={"wrap-login100"}>
-              <div className={"login100-pic js-tilt"} data-tilt>
-                <img
-                  src={require("./images/logo.png")}
-                  class={"my-5"}
-                  width="300px"
-                  alt={"IMG.."}
-                />
-              </div>
+        <div className={"container-login100"}>
+          <div className={"wrap-login100"}>
+            <div className={"login100-pic js-tilt"} data-tilt>
+              <img
+                src={require("./images/logo.png")}
+                class={"my-5"}
+                width="300px"
+                alt={"IMG.."}
+              />
             </div>
           </div>
+        </div>
       );
     } else {
       ham = (
         <div className={"row justify-content-center h-100"}>
           <FriendList
+            onlineUsers={this.state.onlineUsers}
             state={this.state.onlineUsers}
             target_change={this.target_change}
           />
@@ -149,6 +157,9 @@ class ChatRoom extends Component {
             target_name={this.state.chatScreen.target_name}
             conversation={this.state.chatScreen.conversation}
             user={this.props.user}
+            socket={this.state.socket}
+            handleMessages={this.handleMessages}
+            allMessages={this.state.allMessages}
           />
         </div>
       );
