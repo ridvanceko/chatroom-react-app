@@ -95,6 +95,7 @@ db.sequelize.sync({ force: force }).then(function() {
 io.on("connection", socket => {
   console.log("uswr connected to socket server")
   socket.on("new user connected", msg => {
-    console.log(msg);
+    console.log("incoming from client on server",msg);
+    socket.emit("new user connected",msg)
   });
 });

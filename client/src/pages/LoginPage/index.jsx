@@ -28,14 +28,16 @@ class LoginPage extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-	this.props._login(this.state.username, this.state.password,this.setState({
-        redirectTo: "/chatroom"
-      }));
+  this.props._login(this.state.username, this.state.password);
+
+  this.setState({
+    redirectTo: "/chatroom"
+  })
 	
   }
 
   render() {
-    if (this.state.redirectTo) {
+    if (this.props.loggedIn) {
       return <Redirect to={{ pathname: this.state.redirectTo }} />;
     } else {
       return (
@@ -69,7 +71,7 @@ class LoginPage extends Component {
                 <div className={"login100-pic js-tilt"} data-tilt>
                   <img
                     src={require("./images/DARIO-hamjrs.png")}
-                    class={"my-5"}
+                    className={"my-5"}
                     width="300px"
                     alt={"IMG.."}
                   />

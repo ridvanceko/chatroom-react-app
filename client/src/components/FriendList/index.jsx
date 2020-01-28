@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 
 function renderContacter(state, props){
    if(state){
-       return state.map(contacter => {
+       return state.map(onlineUser => {
+           console.log("online users", onlineUser)
            return(
-               <li className={contacter.is_active ? "active" : ""} onClick={props.target_change.bind(this, contacter.name)}>
-                   <div className="d-flex bd-highlight">
-                       <div className="img_cont">
-                           <img src={contacter.photo} className="rounded-circle user_img" alt={"user.img"}/>
-                           <span className={contacter.is_online ? "online_icon" : "online_icon offline" }/>
-                       </div>
+            //    <li className={contacter.is_active ? "active" : ""} onClick={props.target_change.bind(this, contacter.name)}>
+                //    <div className="d-flex bd-highlight">
+                //        <div className="img_cont">
+                //            <img src={contacter.photo} className="rounded-circle user_img" alt={"user.img"}/>
+                //            <span className={contacter.is_online ? "online_icon" : "online_icon offline" }/>
+                //        </div>
                        <div className="user_info">
-                           <span>{contacter.name}</span>
-                           { contacter.is_online ? <p>Online now</p> : <p>{contacter.name} left 30 mins ago</p>}
+                           <span>{onlineUser}</span>
+                         {/* { contacter.is_online ? <p>Online now</p> : <p>{contacter.name} left 30 mins ago</p>}  */}
                        </div>
-                   </div>
-               </li>
+                //    </div>
+            //    </li>
            )
        })
    }else{
-       return(<h2>There is no any conversation...</h2>)
+       return(<h2>There is no Online User...</h2>)
    }
 
 }

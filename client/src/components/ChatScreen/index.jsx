@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import UserInput from "../UserInput";
 import Message from "../Message";
-import io from "socket.io-client";
-import axios from 'axios';
-
+import axios from "axios";
 
 function renderMeg(conversation, user, target) {
   return conversation.map(meg => {
@@ -23,32 +21,26 @@ class ChatScreen extends Component {
     super(props);
     this.state = {
       conversation: this.props.conversation,
-      // user:""
+      
     };
+    // this._initSocket = this._initSocket.bind(this);
   }
+ 
   componentDidMount() {
     // ===============get user=====================
     // axios.get('/auth/user').then(response => {
     //   console.log("chat screen mount get user", response.data.user)
-		// 	if (!response.data.user) {
-		// 		this.setState({
-		// 			user: response.data.user
-		// 		})
-		// 	} else {
-		// 		this.setState({
-		// 			user: null
-		// 		})
-		// 	}
-		// })
-
+    // 	if (!response.data.user) {
+    // 		this.setState({
+    // 			user: response.data.user
+    // 		})
+    // 	} else {
+    // 		this.setState({
+    // 			user: null
+    // 		})
+    // 	}
+    // })
     //  ==================socket ==============
-    var socket = io("127.0.0.1:8081");
-    console.log("socket",socket)
-    socket.emit("new user connected",this.props.user)
-    socket.on("news", function(data) {
-      console.log(data);
-      socket.emit("my other event", { my: "data" });
-    });
   }
 
   render() {
