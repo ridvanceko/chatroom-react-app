@@ -95,16 +95,11 @@ db.sequelize.sync({ force: force }).then(function() {
 io.on("connection", socket => {
   console.log("uswr connected to socket server")
   socket.on("new user connected", msg => {
-<<<<<<< HEAD
-    console.log(msg);
-    socket.emit("new user connected","see your msg")
-=======
     // console.log("incoming from client on server",msg);
     socket.broadcast.emit("new user connected",msg)
   });
   socket.on("sent message", msg => {
     // console.log("incoming from client input on server",msg);
     socket.broadcast.emit("reflection from server",msg)
->>>>>>> c798d8b917d69e2ca0599e623ca4a9bda3f99edd
   });
 });
