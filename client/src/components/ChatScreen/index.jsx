@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import UserInput from "../UserInput";
 import Message from "../Message";
-import io from "socket.io-client";
-import axios from 'axios';
-
+import MessageItem from "../MessageItem";
+// import axios from "axios";
 
 function renderMeg(conversation, user, target) {
   return conversation.map(meg => {
@@ -18,37 +17,43 @@ function renderMeg(conversation, user, target) {
   });
 }
 
+function renderMSGitem(allMessages) {
+  return allMessages.map(msg => {
+  return <h1>{msg.sender.userName} -- {msg.messageText}</h1>;
+  });
+
+  // return (
+  //   <MessageItem
+  //     sender={sender}
+  //     msg={_msg}
+  //   />
+  // );
+}
+
 class ChatScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      conversation: this.props.conversation,
-      // user:""
+      conversation: this.props.conversation
     };
+    // this._initSocket = this._initSocket.bind(this);
   }
+
   componentDidMount() {
     // ===============get user=====================
     // axios.get('/auth/user').then(response => {
     //   console.log("chat screen mount get user", response.data.user)
-		// 	if (!response.data.user) {
-		// 		this.setState({
-		// 			user: response.data.user
-		// 		})
-		// 	} else {
-		// 		this.setState({
-		// 			user: null
-		// 		})
-		// 	}
-		// })
-
+    // 	if (!response.data.user) {
+    // 		this.setState({
+    // 			user: response.data.user
+    // 		})
+    // 	} else {
+    // 		this.setState({
+    // 			user: null
+    // 		})
+    // 	}
+    // })
     //  ==================socket ==============
-    var socket = io("127.0.0.1:8081");
-    console.log("socket",socket)
-    socket.emit("new user connected",this.props.user)
-    socket.on("news", function(data) {
-      console.log(data);
-      socket.emit("my other event", { my: "data" });
-    });
   }
 
   render() {
@@ -90,14 +95,12 @@ class ChatScreen extends Component {
                             </ul>
                         </div> */}
           </div>
-          <div className="card-body msg_card_body">
-            {renderMeg(
-              this.state.conversation,
-              this.props.user_photo,
-              this.props.target_photo
-            )}
-          </div>
-          <UserInput />
+          <div className="card-body msg_card_body">{renderMSGitem(this.props.allMessages)}</div>
+          <UserInput
+            handleMessages={this.props.handleMessages}
+            socket={this.props.socket}
+            user={this.props.user}
+          />
         </div>
       </div>
     );
