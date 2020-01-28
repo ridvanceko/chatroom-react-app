@@ -9,7 +9,7 @@ class ChatRoom extends Component {
     constructor(props){
         super(props);
         this.state =  {
-            user : this.props.user,
+            // user : this.props.user,
             friendList: [
                 {   name: "Rachel Cheng",
                     photo: require("../../pages/ChatRoom/assets/images/Rachel.jpg"),
@@ -75,8 +75,7 @@ class ChatRoom extends Component {
         this.target_change = this.target_change.bind(this);
     }
     componentDidMount(){
-        // this.props._getAllUsers()
-
+console.log(this.props.user,"------------------")
     }
     target_change(name){
         this.state.friendList.forEach(friend =>{
