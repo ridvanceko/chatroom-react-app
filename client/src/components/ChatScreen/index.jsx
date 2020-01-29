@@ -19,7 +19,7 @@ function renderMeg(conversation, user, target) {
 
 function renderMSGitem(allMessages) {
   return allMessages.map(msg => {
-  return <h1>{msg.sender.userName} -- {msg.messageText}</h1>;
+    return <h3 style={{color: "#ffffff"}}>{msg.sender.userName} -- {msg.messageText}</h3>;
   });
 
   // return (
@@ -35,9 +35,22 @@ class ChatScreen extends Component {
     super(props);
     this.state = {
       conversation: this.props.conversation,
-      user : this.props.user
+      user: this.props.user,
+      rediredTo: null
     };
+    this.handleLogOut = this.handleLogOut.bind(this);
+
     // this._initSocket = this._initSocket.bind(this);
+  }
+
+  handleLogOut(event) {
+    event.preventDefault();
+    this.props._logout(event);
+
+    this.setState({
+      redirectTo: "/"
+    })
+
   }
 
   componentDidMount() {
@@ -86,8 +99,9 @@ class ChatScreen extends Component {
                                 <span><i className="fas fa-phone"/></span>
                             </div> */}
             </div>
-            {/* <span id="action_menu_btn"><i className="fas fa-ellipsis-v"/></span>
-                        <div className="action_menu">
+            <span id="action_menu_btn"><i onClick={this.handleLogOut} class="fas fa-sign-out-alt"></i></span>
+            {/* <i className="fas fa-ellipsis-v"/></span> */}
+            {/* <div className="action_menu">
                             <ul>
                                 <li><i className="fas fa-user-circle"/> View profile</li>
                                 <li><i className="fas fa-users"/> Add to close friends</li>
@@ -96,7 +110,7 @@ class ChatScreen extends Component {
                             </ul>
                         </div> */}
           </div>
-          <div className="card-body msg_card_body">{renderMSGitem(this.props.allMessages)}</div>
+          <div className="card-body msg_card_body text-right">{renderMSGitem(this.props.allMessages)}</div>
           <UserInput
             handleMessages={this.props.handleMessages}
             socket={this.props.socket}

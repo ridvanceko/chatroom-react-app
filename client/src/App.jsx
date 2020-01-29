@@ -34,10 +34,10 @@ class App extends Component {
 		})
 	}
 
-	_logout() {
-		// event.preventDefault();
-		console.log("function is not workind dudeeeeeeeeee")
-		axios.post('/auth/logout').then(response => {
+	_logout(event) {
+		event.preventDefault();
+		console.log("function is working dudeeeeeeeeee")
+		axios.post('/auth/logout', {}).then(response => {
 			if (response.status === 200) {
 				this.setState({
 					loggedIn: false,

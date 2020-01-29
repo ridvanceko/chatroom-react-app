@@ -90,7 +90,7 @@ class ChatRoom extends Component {
       }
     };
     this.target_change = this.target_change.bind(this);
-    this.handleMessages= this.handleMessages.bind(this)
+    this.handleMessages= this.handleMessages.bind(this);
   }
 
   initSocket(user) {
@@ -161,6 +161,7 @@ class ChatRoom extends Component {
             socket={this.state.socket}
             handleMessages={this.handleMessages}
             allMessages={this.state.allMessages}
+            _logout={this.props._logout}
           />
         </div>
       );
