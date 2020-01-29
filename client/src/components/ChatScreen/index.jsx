@@ -19,7 +19,23 @@ function renderMeg(conversation, user, target) {
 
 function renderMSGitem(allMessages) {
   return allMessages.map(msg => {
-  return <h1>{msg.sender.userName} -- {msg.messageText}</h1>;
+    return 
+
+    
+    
+    // <MessageItem sender={msg.sender} messageText={msg.messageText}/>
+     
+    //   <li>
+    //     <div className="card" style="width: 18rem;">
+    //       <div className="card-body">
+    //         <h5 className="card-title">{msg.sender.userName}</h5>
+    //         <p className="card-text">{msg.messageText}</p>
+    //       </div>
+    //     </div>
+    //     {/* <h1>{this.props.sender}</h1>
+    //       <h3>{this.props.msg}</h3> */}
+    //   </li>
+    // );
   });
 
   // return (
@@ -95,7 +111,9 @@ class ChatScreen extends Component {
                             </ul>
                         </div> */}
           </div>
-          <div className="card-body msg_card_body">{renderMSGitem(this.props.allMessages)}</div>
+          <div className="card-body msg_card_body">
+            {renderMSGitem(this.props.allMessages)}
+          </div>
           <UserInput
             handleMessages={this.props.handleMessages}
             socket={this.props.socket}

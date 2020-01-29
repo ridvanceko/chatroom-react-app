@@ -7,10 +7,25 @@ export default class MessageItem extends Component {
 
   render() {
     return (
+
+
+
       <li>
-        <h1>{this.props.sender}</h1>
-        <h3>{this.props.msg}</h3>
+
+<div className="card" style="width: 18rem;">
+  <div className="card-body">
+    <h5 className="card-title">{this.props.sender}</h5>
+   <p className="card-text">{this.props.msg}</p>
+    </div>
+</div> 
+        
       </li>
+
+
+
     );
   }
 }
+
+
+ 
