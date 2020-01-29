@@ -1,13 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "echoes27",
+
     "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
+
     "use_env_variable":"JAWSDB_URL",
     "username": "xcfqqhm5lq1i43jo",
     "password": "hr9qn9codk8b37j9",

@@ -79,7 +79,7 @@ var io = require('socket.io')(server);
 let force = true;
 
 if (process.env.NODE_ENV === "development") {
-  force = true;
+  force = false;
 }
 
 // ==== Starting Server =====

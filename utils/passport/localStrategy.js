@@ -26,7 +26,7 @@ const strategy = new LocalStrategy(
 					return done(null, false, { message: 'Incorrect password' })
 				}
 
-				console.log("alright alright alright!")
+				// console.log("alright alright alright!")
 
 				return done(null, match)
 			})
