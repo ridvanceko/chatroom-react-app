@@ -105,7 +105,6 @@ class ChatRoom extends Component {
     });
   }
   componentWillMount() {
-    this.initSocket(this.props.user);
   }
   handleMessages(data) {
     this.setState({
@@ -113,6 +112,8 @@ class ChatRoom extends Component {
     });
   }
   componentDidMount() {
+    this.initSocket(this.props.user);
+
     this.state.socket.on('reflection from server',msg=>{
         this.handleMessages(msg)
     })
