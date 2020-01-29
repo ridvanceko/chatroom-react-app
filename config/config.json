@@ -8,10 +8,8 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "xcfqqhm5lq1i43jo",
-    "password": "hr9qn9codk8b37j9",
-    "database": "dpzxvno9b41iuccu",
-    "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable":"JAWSDB_URL",
+
     "dialect": "mysql",
     "operatorsAliases": false
   }
