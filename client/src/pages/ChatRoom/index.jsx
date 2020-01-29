@@ -94,7 +94,7 @@ class ChatRoom extends Component {
   }
 
   initSocket(user) {
-    const socket = io("127.0.0.1:8081");
+    const socket = io("https://sleepy-stream-16202.herokuapp.com/");
     socket.emit("new user connected", user);
     this.setState({ socket });
     socket.on("new user connected", data => this.handleUsers(data));

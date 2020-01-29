@@ -2,16 +2,19 @@
   "development": {
     "username": "root",
     "password": "echoes27",
+
     "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": "echoes27",
-    "database": "testdb",
-    "host": "127.0.0.1",
+
+    "use_env_variable":"JAWSDB_URL",
+    "username": "xcfqqhm5lq1i43jo",
+    "password": "hr9qn9codk8b37j9",
+    "database": "dpzxvno9b41iuccu",
+    "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "operatorsAliases": false
   }

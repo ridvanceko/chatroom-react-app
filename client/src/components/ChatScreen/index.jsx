@@ -20,6 +20,7 @@ function renderMeg(conversation, user, target) {
 function renderMSGitem(allMessages) {
   return allMessages.map(msg => {
     return <h3 style={{color: "#ffffff"}}>{msg.sender.userName} -- {msg.messageText}</h3>;
+
   });
 
   // return (
@@ -111,6 +112,7 @@ class ChatScreen extends Component {
                         </div> */}
           </div>
           <div className="card-body msg_card_body text-right">{renderMSGitem(this.props.allMessages)}</div>
+
           <UserInput
             handleMessages={this.props.handleMessages}
             socket={this.props.socket}
