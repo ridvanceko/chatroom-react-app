@@ -1,15 +1,35 @@
-### Project 3 Starter Kit
+### Dario ChatApp
 
-1) Forked from create-react-app, create-react-express, 08-Ins-MERN, and react-passport-exampl
+Dario is real-time web chat application implemented using Node.js, MySQL, Socket.IO and React. It contains users and channels.
 
-## Installation
-1) Add the following to your .env: 
-        1) GOOGLE_CLIENT_ID=
-        GOOGLE_CLIENT_SECRET=
-        NODE_ENV=
+## Status
+This application currently holds the following functionality:
 
-## Note
-* In order to set the google authentication up, you must register your app @ [https://console.developers.google.com](https://console.developers.google.com) & set `GOOGLE_CLIENT_ID` & `GOOGLE_CLIENT_SECRET` as environmental variables
-* In development mode (i.e. `npm run dev`), OAuth google callback is not being proxied to the google servers. Therefore in order to test the google OAuth on your local machine do the following:
-1) `npm run build`
-2) `npm run prod`
+Users:
+Identified by username
+Can assign an email address to itself
+
+
+## Data Structures
+The main data structures that were used in this project were JavaScript Array objects and JavaScript Object objects.
+
+The JavaScript Array was mainly used to store things that required easy iterator behaviour. Some use cases:
+
+List of users
+List of channels
+
+## Components
+There were three components that were used in this application.
+
+channel
+dashboard
+login
+
+Channel
+The Channel component contains all the user-interface features of a chat channel. It contains a list of users, the current channel name, the chat box and the textfield and button to send messages.
+
+Dashboard
+The Dashboard component contains all the available users, their username a log out button.
+
+Login
+The Login component allows a user to log in. Any user can type any username and log in. User data will persist after they log out. If a username does not exist in the system, the server will seamlessly create the user in the background.
