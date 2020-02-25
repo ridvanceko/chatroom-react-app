@@ -92,11 +92,13 @@ db.sequelize.sync({ force: force }).then(function() {
 });
 
 // ============== socket.io connection
+const onlineUsers=[];
 io.on("connection", socket => {
   console.log("user connected to socket server")
   socket.on("new user connected", msg => {
     console.log("incoming new user from client on server",msg);
-    socket.emit("new user connected",msg)
+    [...onlineUsers,msg];
+    socket.emit("new user connected",onlineUsers)
   });
   socket.on("sent message", msg => {
     console.log("incoming from client input on server",msg);

@@ -19,8 +19,17 @@ function renderMeg(conversation, user, target) {
 
 function renderMSGitem(allMessages) {
   return allMessages.map(msg => {
-    return <h3 style={{color: "#ffffff"}}>{msg.sender.userName} -- {msg.messageText}</h3>;
-
+    // return <h3 style={{color: "#ffffff"}}>{msg.sender.userName} -- {msg.messageText}</h3>;
+    return (
+      <li>
+      <div className="card"  style={{height: "auto"}}>
+        <div className="card-body">
+          <h4 style={{color: "#86A8E7"}} className="card-title">{msg.sender.userName}</h4>
+          <h5 style={{color: "#ffffff"}} className="card-text">{msg.messageText}</h5>
+        </div>
+      </div>
+      </li>
+    );
   });
 
   // return (
@@ -50,8 +59,7 @@ class ChatScreen extends Component {
 
     this.setState({
       redirectTo: "/"
-    })
-
+    });
   }
 
   componentDidMount() {
@@ -77,7 +85,7 @@ class ChatScreen extends Component {
         <div className="card">
           <div className="card-header msg_head">
             <div className="d-flex bd-highlight">
-              <div className="img_cont">
+              {/* <div className="img_cont">
                 <img
                   src={this.props.target_photo}
                   className="rounded-circle user_img"
@@ -90,17 +98,18 @@ class ChatScreen extends Component {
                       : "online_icon offline"
                   }
                 />
-              </div>
+              </div> */}
               <div className="user_info">
-                <span>Chat with {this.props.target_name}</span>
-                <p>3 Messages</p>
+                <span>Global Chatroom</span>
               </div>
               {/* <div className="video_cam">
                                 <span><i className="fas fa-video"/></span>
                                 <span><i className="fas fa-phone"/></span>
                             </div> */}
             </div>
-            <span id="action_menu_btn"><i onClick={this.handleLogOut} class="fas fa-sign-out-alt"></i></span>
+            <span id="action_menu_btn">
+              <i onClick={this.handleLogOut} class="fas fa-sign-out-alt"></i>
+            </span>
             {/* <i className="fas fa-ellipsis-v"/></span> */}
             {/* <div className="action_menu">
                             <ul>
@@ -111,8 +120,12 @@ class ChatScreen extends Component {
                             </ul>
                         </div> */}
           </div>
-          <div className="card-body msg_card_body text-right">{renderMSGitem(this.props.allMessages)}</div>
-
+          <div className="card-body msg_card_body text-right mh-100">
+          <ul >
+            {renderMSGitem(this.props.allMessages)}
+          </ul>
+          
+          </div>
           <UserInput
             handleMessages={this.props.handleMessages}
             socket={this.props.socket}
