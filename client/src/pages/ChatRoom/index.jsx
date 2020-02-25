@@ -101,7 +101,7 @@ class ChatRoom extends Component {
   }
   handleUsers(data) {
     this.setState({
-      onlineUsers: [...this.state.onlineUsers, data]
+      onlineUsers: data
     });
   }
   componentWillMount() {
